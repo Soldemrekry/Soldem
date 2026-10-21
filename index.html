@@ -1,14 +1,71 @@
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Soldem 30 sec</title>
-    <script async src="https://tally.so/widgets/embed.js"></script>
-    <style type="text/css">
-      html { margin: 0; height: 100%; overflow: hidden; }
-      iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; }
-    </style>
-  </head>
-  <body>
-    <iframe data-tally-src="https://tally.so/r/RWG0BJ?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Soldem 30 sec"></iframe>
-  </body>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soldem 30 sec</title>
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.36);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#tally-container {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+#tally-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+</style>
+</head>
+
+<body>
+
+<video id="background-video" autoplay muted loop playsinline preload="auto">
+  <source src="MicrosoftTeams-video%20(2).mp4" type="video/mp4">
+</video>
+
+<div id="overlay"></div>
+
+<div id="tally-container">
+  <iframe
+    data-tally-src="https://tally.so/r/RWG0BJ?transparentBackground=1"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    title="Soldem 30 sec">
+  </iframe>
+</div>
+
+</body>
 </html>
