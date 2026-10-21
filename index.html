@@ -1,70 +1,99 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soldem 30 sec</title>
+<title>ÄLÄ HAE VIELÄ!</title>
+
 <script async src="https://tally.so/widgets/embed.js"></script>
 
 <style>
+
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: black;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+background: #000;
 }
+
+/* TAUSTAVIDEO */
 
 #background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+object-position: center;
+z-index: 0;
 }
+
+/* TUMMENNUS VIDEON PÄÄLLE */
 
 #overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.36);
-  z-index: 1;
-  pointer-events: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.38);
+z-index: 1;
+pointer-events: none;
 }
 
+/* TALLY VIDEON PÄÄLLE */
+
 #tally-container {
-  position: fixed;
-  inset: 0;
-  z-index: 2;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 2;
 }
 
 #tally-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: transparent;
+width: 100%;
+height: 100%;
+border: 0;
+background: transparent;
 }
+
 </style>
 </head>
 
 <body>
 
-<video id="background-video" autoplay muted loop playsinline preload="auto">
-  <source src="MicrosoftTeams-video%20(2).mp4" type="video/mp4">
+<video
+id="background-video"
+autoplay
+muted
+loop
+playsinline
+preload="auto">
+
+<source src="MicrosoftTeams-video%20(2).mp4" type="video/mp4">
+
 </video>
 
 <div id="overlay"></div>
 
 <div id="tally-container">
-  <iframe
-    data-tally-src="https://tally.so/r/RWG0BJ?transparentBackground=1"
-    width="100%"
-    height="100%"
-    frameborder="0"
-    title="Soldem 30 sec">
-  </iframe>
+
+<iframe
+data-tally-src="https://tally.so/r/RWG0BJ?transparentBackground=1"
+width="100%"
+height="100%"
+frameborder="0"
+marginheight="0"
+marginwidth="0"
+title="ÄLÄ HAE VIELÄ!">
+</iframe>
+
 </div>
 
 </body>
