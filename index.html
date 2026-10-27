@@ -4,7 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sopiiko myynti oikeasti sulle?</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1651144425159737');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+
 <script async src="https://tally.so/widgets/embed.js"></script>
+
 <style>
 html, body {
   margin: 0;
@@ -52,10 +69,19 @@ html, body {
 </style>
 </head>
 <body>
+
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1651144425159737&ev=PageView&noscript=1"
+  alt="">
+</noscript>
+
 <video id="background-video" autoplay muted loop playsinline preload="auto">
   <source src="./backround.mp4.mp4" type="video/mp4">
 </video>
+
 <div id="overlay"></div>
+
 <div id="tally-container">
   <iframe
     data-tally-src="https://tally.so/r/4aaLDO?transparentBackground=1"
@@ -67,5 +93,18 @@ html, body {
     title="Sopiiko myynti oikeasti sulle?">
   </iframe>
 </div>
+
+<script>
+window.addEventListener('message', function(event) {
+  if (event.origin !== 'https://tally.so') return;
+
+  if (event.data && event.data.event === 'Tally.FormSubmitted') {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+    }
+  }
+});
+</script>
+
 </body>
 </html>
