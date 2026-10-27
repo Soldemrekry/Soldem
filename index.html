@@ -1,100 +1,23 @@
-<!DOCTYPE html>
-<html lang="fi">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÄLÄ HAE VIELÄ!</title>
+<!DOCTYPE html> <html lang="fi"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>ÄLÄ HAE VIELÄ!</title>
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-<style>
+<style> html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
 
-html, body {
-margin: 0;
-padding: 0;
-width: 100%;
-height: 100%;
-overflow: hidden;
-background: #000;
-}
+#background-video { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; object-position: center center; z-index: 0; }
 
-/* TAUSTAVIDEO */
+#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.38); z-index: 1; pointer-events: none; }
 
-#background-video {
-position: fixed;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-object-fit: cover;
-object-position: center;
-z-index: 0;
-}
+#tally-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; }
 
-/* TUMMENNUS VIDEON PÄÄLLE */
-
-#overlay {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.38);
-z-index: 1;
-pointer-events: none;
-}
-
-/* TALLY VIDEON PÄÄLLE */
-
-#tally-container {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 2;
-}
-
-#tally-container iframe {
-width: 100%;
-height: 100%;
-border: 0;
-background: transparent;
-}
-
-</style>
-</head>
+#tally-container iframe { display: block; width: 100%; height: 100%; border: 0; background: transparent; } </style> </head>
 
 <body>
 
-<video
-id="background-video"
-autoplay
-muted
-loop
-playsinline
-preload="auto">
-
-<source src="PAKATTU Soldem Unit Taustavideo.mp4" type="video/mp4">
-
-</video>
+<video id="background-video" autoplay muted loop playsinline preload="auto"> <source src="./PAKATTU%20Soldem%20Unit%20Taustavideo.mp4" type="video/mp4"> </video>
 
 <div id="overlay"></div>
 
-<div id="tally-container">
+<div id="tally-container"> <iframe data-tally-src="https://tally.so/r/RWG0BJ?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="ÄLÄ HAE VIELÄ!"> </iframe> </div>
 
-<iframe
-data-tally-src="https://tally.so/r/RWG0BJ?transparentBackground=1"
-width="100%"
-height="100%"
-frameborder="0"
-marginheight="0"
-marginwidth="0"
-title="ÄLÄ HAE VIELÄ!">
-</iframe>
-
-</div>
-
-</body>
-</html>
+</body> </html>
