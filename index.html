@@ -13,10 +13,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1651144425159737');
-fbq('track', 'PageView');
+fbq('init','1651144425159737');
+fbq('track','PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
@@ -84,7 +84,7 @@ html, body {
 
 <div id="tally-container">
   <iframe
-    data-tally-src="https://tally.so/r/4aaLDO?transparentBackground=1"
+    data-tally-src="https://tally.so/embed/4aaLDO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=0"
     width="100%"
     height="100%"
     frameborder="0"
@@ -98,13 +98,25 @@ html, body {
 window.addEventListener('message', function(event) {
   if (event.origin !== 'https://tally.so') return;
 
-  if (event.data && event.data.event === 'Tally.FormSubmitted') {
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
+  var data = event.data;
+
+  if (typeof data === 'string') {
+    try {
+      data = JSON.parse(data);
+    } catch (error) {
+      if (data.indexOf('Tally.FormSubmitted') !== -1 && typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+      return;
     }
+  }
+
+  if (data && data.event === 'Tally.FormSubmitted' && typeof fbq === 'function') {
+    fbq('track', 'Lead');
   }
 });
 </script>
 
 </body>
 </html>
+
